@@ -1,0 +1,165 @@
+# This is the configuration file for the DiffusionHASAC algorithm.
+seed:
+  # whether to use the specified seed
+  seed_specify: True
+  # seed
+  seed: 1
+device:
+  # whether to use CUDA
+  cuda: True
+  # whether to set CUDA deterministic
+  cuda_deterministic: True
+  # arg to torch.set_num_threads
+  torch_threads: 4
+train:
+  # number of parallel environments for training data collection
+  n_rollout_threads: 20
+  # number of total steps
+  num_env_steps: 10010000
+  # number of warmup steps
+  warmup_steps: 10000
+  # number of steps per train
+  train_interval: 50
+  # ratio of training iterations to train_interval
+  update_per_train: 1
+  # logging interval (currently unused)
+  log_interval: ~
+  # evaluation interval
+  eval_interval: 10000
+  # whether to use ValueNorm
+  use_valuenorm: False
+  # whether to use linear learning rate decay
+  use_linear_lr_decay: False
+  # whether to consider the case of truncation when an episode is done
+  use_proper_time_limits: True
+  # if set, load models from this directory; otherwise, randomly initialise the models
+  model_dir: ~
+  log_tb: True
+  role_term: "vae"
+  Orthogonal: True
+  epsilon0: 0.0001 # 0.01
+  t0: 1000000
+eval:
+  # whether to use evaluation
+  use_eval: True
+  # number of parallel environments for evaluation
+  n_eval_rollout_threads: 20
+  # number of episodes per evaluation
+  eval_episodes: 40
+render:
+  # whether to use render
+  use_render: False
+  # number of episodes to render
+  render_episodes: 10
+model:
+  # network parameters
+  # hidden sizes for mlp module in the network
+  hidden_sizes: [256, 256]
+  # activation function, choose from sigmoid, tanh, relu, leaky_relu, selu
+  activation_func: relu
+  # whether to use feature normalization
+  use_feature_normalization: True
+  # final activation function, choose from sigmoid, tanh, relu, leaky_relu, selu
+  final_activation_func: tanh
+  # initialization method for network parameters, choose from xavier_uniform_, orthogonal_, ...
+  initialization_method: orthogonal_
+  # gain of the output layer of the network.
+  gain: 0.01
+  # optimizer parameters
+  # actor learning rate
+  lr: 0.001 #0.0003
+  # critic learning rate
+  critic_lr: 0.0024 # 0.0003
+  # v_min: 0
+  # v_max: 600
+  n_atoms: 150
+  v_min: 0
+  v_max: 16000 # 800 1000
+  entr_coeff: 0.005
+  dropout_rate: null
+  use_layer_norm: False
+  use_batch_norm: False
+  bn_warmup: 100000
+  bn_momentum: 0.99
+  bn_mode: brn_actor
+  critic_hs: [2048, 2048]
+  critic_activation: 'relu'
+  n_critics: 2
+  critic_b1: 0.5
+  sampler_name: "dis"
+  diff_steps: 16 # 16
+  init_std: 2.5
+  friction: 1.0
+  dt: 0.1
+  per_dim_friction: True
+  use_target_score: False
+  integrator: "EM"
+  learn_prior: False
+  dt_schedule: cosine
+  per_step_dt: False
+  learn_friction: True
+  learn_dt: True
+  learn_mass_matrix: False
+  use_step_size_scheduler: False
+  underdamped: False
+  b1: 0.5
+  do_actor_grad_clip: True
+  actor_grad_clip: 1.0
+  warmup: "const"
+  warmup_iters: 10000
+  iters: 10010000
+  latent_dim: &z_dim 32
+  vae_batch_size: 128
+  vae_epochs: 10 # 400
+  vae_ft_epochs: 0
+  vae_alpha1: 0
+
+  score_model:
+    use_target_score: False
+    num_layers: 3
+    num_hid: 256
+    outer_clip: 10000
+    inner_clip: 100
+
+    weight_init: 1e-8
+    bias_init: 0.
+    layer_norm: false
+    time_coder_out: 256
+
+    latent_dim: *z_dim
+
+
+algo:
+  # whether to auto-tune temperature
+  auto_alpha: True
+  alpha_init: 0.2 #0.01
+  # temperature parameter
+  alpha: 0.001
+  cross_alpha: 0.0005
+  # alpha learning rate
+  dif_alpha_lr: 0.0003
+  alpha_lr: 0.0003
+  # discount factor
+  gamma: 0.99 # 0.95
+  # off-policy buffer size
+  buffer_size: 1000000
+  # training batch size
+  batch_size: 1000 # cares 128
+  # coefficient for target model soft update
+  polyak: 0.005
+  # the number of steps to look ahead
+  n_step: 10
+  # whether to use huber loss
+  use_huber_loss: False
+  # whether to use policy active masks
+  use_policy_active_masks: True
+  # huber delta
+  huber_delta: 10.0
+  # whether to share parameter among actors
+  share_param: True
+  # whether to use a fixed optimisation order
+  fixed_order: False
+  policy_freq: 1
+logger:
+  # logging directory
+  log_dir: "./results"

@@ -1,0 +1,1 @@
+python train.py --algo dspic --env smac --exp_name test

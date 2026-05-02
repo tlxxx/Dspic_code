@@ -1,0 +1,19 @@
+# scenario: HalfCheetah-v4
+# agent_conf: 6x1
+# agent_obsk: 0 # We use the fully observable setting, so this argument is not useful. But we still keep it.
+# episode_limit: 1000
+
+# scenario: Ant-v4
+# agent_conf: 8x1
+# agent_obsk: 0 # We use the fully observable setting, so this argument is not useful. But we still keep it.
+# episode_limit: 1000
+
+# scenario: Walker2d-v4
+# agent_conf: 6x1
+# agent_obsk: 0 # We use the fully observable setting, so this argument is not useful. But we still keep it.
+# episode_limit: 1000
+
+scenario: HumanoidStandup-v4
+agent_conf: 9|8
+agent_obsk: 0
+episode_limit: 1000
