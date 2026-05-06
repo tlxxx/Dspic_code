@@ -38,7 +38,7 @@ python examples/train.py --algo dspic --env smac/smacv2/mamujoco/lbf --exp_name 
 ```
 
 
-<!-- ## Acknowledgements
+### Acknowledgements
 Portions of the project are adapted from other repositories: 
 - https://github.com/PKU-MARL/HARL is licensed under MIT,
-- https://github.com/ALRhub/DIME is licensed under MIT. -->
+- https://github.com/ALRhub/DIME is licensed under MIT. 
