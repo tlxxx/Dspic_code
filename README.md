@@ -41,4 +41,7 @@ python examples/train.py --algo dspic --env smac/smacv2/mamujoco/lbf --exp_name 
 ### Acknowledgements
 Portions of the project are adapted from other repositories: 
 - https://github.com/PKU-MARL/HARL is licensed under MIT,
-- https://github.com/ALRhub/DIME is licensed under MIT. 
+- https://github.com/ALRhub/DIME is licensed under MIT.
+
+### Contact Us
+If you have any questions, you can ask them on GitHub or send an email to [ghli04@smail.nju.edu.cn](ghli04@smail.nju.edu.cn). (Sending emails is recommended🤗.)
