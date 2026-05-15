@@ -18,7 +18,7 @@ To install MaMuJoCo, please follow the instructions on https://github.com/openai
 Then, ```mkdir ~/.mujoco``` and move the .tar.gz or .zip to ```~/.mujoco```, and extract it by ```unzip zipname```. Finally add the path to ```~/.bashrc``` with 
 
 ```bash
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/<user>/.mujoco/<folder-name/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/<user>/.mujoco/<folder-name>/bin
 ```
 
 After installation is finished, the conda environment can be activated, and the code can be run using 
