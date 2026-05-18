@@ -1,6 +1,6 @@
 The Code for the **D**iffusion **S**oft **P**olicy **I**teration with **C**omplete Division (Dspic) paper submission at ICML2026. (accepted as a regular paper)
 
-## Towards Complete Multi-Agent Coordination Policy Learning via Denoising Maximum Entropy Optimization 
+## [Towards Complete Multi-Agent Coordination Policy Learning via Denoising Maximum Entropy Optimization](https://openreview.net/pdf?id=OiOBtT157H) 
 **Learning Curves are available in *paper_plots***
 
 
